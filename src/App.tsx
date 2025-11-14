@@ -7,11 +7,15 @@ import FighterProfilePage from './pages/FighterProfilePage';
 import AccuracyTrackerPage from './pages/AccuracyTrackerPage';
 import HowItWorksPage from './pages/HowItWorksPage';
 import './index.css';
+import EmberBackground from './components/EmberBackground';
+import BloodParticleBackground from './components/BloodParticleBackground';
 
 function App() {
   return (
     <Router>
       <div className="App">
+        <BloodParticleBackground/>
+
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/fights" element={<FightAnalyticsPage />} />

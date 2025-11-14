@@ -101,7 +101,7 @@ const AccuracyTrackerPage: React.FC = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-bg-pure-black">
+      <div className="min-h-screen">
         <Navigation />
         <div className="pt-16">
           <div className="max-w-7xl mx-auto px-6 py-24">
@@ -117,7 +117,7 @@ const AccuracyTrackerPage: React.FC = () => {
 
   if (!accuracyStats) {
     return (
-      <div className="min-h-screen bg-bg-pure-black">
+      <div className="min-h-screen">
         <Navigation />
         <div className="pt-16">
           <div className="max-w-7xl mx-auto px-6 py-24 text-center">
@@ -130,13 +130,12 @@ const AccuracyTrackerPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-bg-pure-black">
+    <div className="min-h-screen">
       <Navigation />
       
       <div className="pt-16">
         {/* Hero Section */}
-        <section className="py-24 bg-gradient-to-br from-bg-pure-black to-red-primary/10 relative overflow-hidden">
-          <div className="absolute inset-0 octagon-pattern opacity-20" />
+        <section className="py-24 relative overflow-hidden">
           <div className="relative max-w-4xl mx-auto px-6 lg:px-8 text-center">
             <h1 className="text-hero text-text-white mb-6">
               AI Prediction Accuracy
@@ -146,12 +145,12 @@ const AccuracyTrackerPage: React.FC = () => {
               and detailed analysis across all weight classes and fight outcomes.
             </p>
             
-            <div className="inline-flex items-center space-x-8 p-8 bg-bg-elevated/80 backdrop-blur-sm rounded-2xl border border-border-subtle shadow-glow-card">
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-6 sm:space-y-0 sm:space-x-8 p-8 bg-bg-elevated/80 backdrop-blur-sm rounded-2xl border border-border-subtle shadow-glow-card">
               <div className="text-center">
-                <div className="text-5xl font-bold text-red-primary mb-2">
+                <div className="text-4xl sm:text-5xl font-bold text-red-primary mb-2 text-center">
                   {accuracyStats.overall.accuracy}%
                 </div>
-                <div className="text-small text-text-secondary">Overall Accuracy</div>
+                <div className="text-small text-text-secondary text-center">Overall Accuracy</div>
               </div>
               <div className="w-px h-16 bg-border-subtle" />
               <div className="text-center">
@@ -344,7 +343,7 @@ const AccuracyTrackerPage: React.FC = () => {
           </div>
 
           {/* CTA Section */}
-          <section className="py-16 bg-gradient-to-r from-bg-elevated to-bg-near-black rounded-2xl border border-border-subtle">
+          <section className="py-16 rounded-2xl border border-border-subtle">
             <div className="text-center">
               <h2 className="text-section-headline text-text-white mb-4">
                 Want More Detailed Analysis?
@@ -354,11 +353,11 @@ const AccuracyTrackerPage: React.FC = () => {
                 AI insights for professional fight analysis and betting.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <Link to="/fights" className="btn-primary">
+                <Link to="/fights" className="btn-primary flex items-center">
                   <BarChart3 size={20} className="mr-2" />
                   View Live Predictions
                 </Link>
-                <button className="btn-ghost">
+                <button className="btn-ghost flex items-center">
                   Start Premium Trial
                 </button>
               </div>

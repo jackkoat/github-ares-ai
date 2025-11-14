@@ -100,7 +100,7 @@ const FighterProfilePage: React.FC = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-bg-pure-black">
+      <div className="min-h-screen">
         <Navigation />
         <div className="pt-16">
           <div className="max-w-7xl mx-auto px-6 py-24">
@@ -116,7 +116,7 @@ const FighterProfilePage: React.FC = () => {
 
   if (error || !fighter) {
     return (
-      <div className="min-h-screen bg-bg-pure-black">
+      <div className="min-h-screen">
         <Navigation />
         <div className="pt-16">
           <div className="max-w-7xl mx-auto px-6 py-24 text-center">
@@ -133,7 +133,7 @@ const FighterProfilePage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-bg-pure-black">
+    <div className="min-h-screen">
       <Navigation />
       
       <div className="pt-16">
@@ -148,21 +148,6 @@ const FighterProfilePage: React.FC = () => {
 
         {/* Fighter Hero Section */}
         <section className="relative py-24 overflow-hidden">
-          {/* Background */}
-          <div className="absolute inset-0">
-            <img 
-              src={fighter.photo} 
-              alt={fighter.name}
-              className="w-full h-full object-cover opacity-20"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.src = '/images/fighter_silhouette.png';
-              }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-br from-bg-pure-black via-bg-pure-black/80 to-red-primary/10" />
-            <div className="absolute inset-0 octagon-pattern opacity-30" />
-          </div>
-
           <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
             <div className="flex flex-col lg:flex-row items-center lg:items-start space-y-8 lg:space-y-0 lg:space-x-12">
               {/* Fighter Image */}

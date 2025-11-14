@@ -4,7 +4,7 @@ import { Brain, Target, TrendingUp, Zap, BarChart3, CheckCircle, Database, Cpu }
 
 const HowItWorksPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-bg-pure-black text-text-white">
+    <div className="min-h-screen">
       <Navigation />
       
       {/* Hero Section */}
@@ -86,7 +86,7 @@ const HowItWorksPage: React.FC = () => {
       </section>
 
       {/* Key Features */}
-      <section className="py-16 px-6 bg-bg-near-black">
+      <section className="py-16 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-display font-bold text-center mb-16">What Makes Our AI Superior</h2>
           
@@ -241,7 +241,7 @@ const HowItWorksPage: React.FC = () => {
       </section>
 
       {/* Accuracy Metrics */}
-      <section className="py-16 px-6 bg-bg-near-black">
+      <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-display font-bold mb-8">Proven Accuracy Track Record</h2>
           <p className="text-xl text-text-secondary mb-12">

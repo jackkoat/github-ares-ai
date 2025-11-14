@@ -99,25 +99,16 @@ const HomePage: React.FC = () => {
   const { mainEvent, coMain, otherFights } = getUFC322FightCards();
 
   return (
-    <div className="min-h-screen bg-bg-pure-black">
+    // TWEAK 1: Removed `bg-bg-pure-black` to let global background show
+    <div className="min-h-screen">
       <Navigation />
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0">
-          <img 
-            src="/images/ufc_octagon_hero.png" 
-            alt="UFC Octagon"
-            className="w-full h-full object-cover opacity-20"
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.style.display = 'none';
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-bg-pure-black via-bg-pure-black/80 to-red-primary/10" />
-          <div className="absolute inset-0 octagon-pattern opacity-30" />
-        </div>
+        
+        {/* TWEAK 2: Removed the entire "absolute inset-0" div.
+            This div contained the hero image, gradients, and octagon pattern.
+            Removing it lets the particle background become the hero background. */}
 
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8 w-full">
           <div className="text-center">
@@ -129,21 +120,21 @@ const HomePage: React.FC = () => {
             </p>
             
             {accuracyStats && (
-              <div className="inline-flex items-center space-x-8 mb-12 p-6 bg-bg-elevated/80 backdrop-blur-sm rounded-xl border border-border-subtle">
+              <div className="flex flex-col sm:flex-row items-center justify-center space-y-6 sm:space-y-0 sm:space-x-8 mb-12 p-4 bg-bg-elevated/80 backdrop-blur-sm rounded-xl border border-border-subtle">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-red-primary mb-1">
                     {accuracyStats.overall.accuracy}%
                   </div>
                   <div className="text-small text-text-secondary">AI Accuracy</div>
                 </div>
-                <div className="w-px h-12 bg-border-subtle" />
+                <div className="hidden sm:block w-px h-12 bg-border-subtle" />
                 <div className="text-center">
                   <div className="text-3xl font-bold text-text-white mb-1">
                     {accuracyStats.overall.totalPredictions.toLocaleString()}
                   </div>
                   <div className="text-small text-text-secondary">Total Predictions</div>
                 </div>
-                <div className="w-px h-12 bg-border-subtle" />
+                <div className="hidden sm:block w-px h-12 bg-border-subtle" />
                 <div className="text-center">
                   <div className="text-3xl font-bold text-success-green mb-1">
                     {accuracyStats.overall.recentStreak}
@@ -169,7 +160,8 @@ const HomePage: React.FC = () => {
 
       {/* UFC 322 Featured Event Section */}
       {mainEvent && (
-        <section className="py-24 bg-gradient-to-br from-red-primary/20 to-bg-near-black">
+        // TWEAK 3: Removed gradient classes (`from-red-primary/20 to-bg-near-black`)
+        <section className="py-24">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="text-center mb-16">
               <div className="inline-flex items-center space-x-2 mb-4 px-4 py-2 bg-red-primary/20 rounded-full border border-red-primary/30">
@@ -202,7 +194,7 @@ const HomePage: React.FC = () => {
                     { label: 'Minutes', value: timeToUFC322.minutes },
                     { label: 'Seconds', value: timeToUFC322.seconds }
                   ].map((item, index) => (
-                    <div key={index} className="bg-bg-elevated/80 backdrop-blur-sm rounded-lg p-4 border border-border-subtle">
+                    <div key={index} className="bg-bg-elevated/80 backdrop-blur-sm rounded-lg p-4 border border-border-subtle animate-glow-pulse">
                       <div className="text-2xl font-bold text-red-primary mb-1">{item.value}</div>
                       <div className="text-small text-text-secondary">{item.label}</div>
                     </div>
@@ -326,7 +318,8 @@ const HomePage: React.FC = () => {
       )}
 
       {/* Other Upcoming Fights Section */}
-      <section className="py-24 bg-bg-near-black">
+      {/* TWEAK 4: Removed `bg-bg-near-black` */}
+      <section className="py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-page-headline text-text-white mb-4">
@@ -375,7 +368,8 @@ const HomePage: React.FC = () => {
 
       {/* Featured Analytics Section */}
       {accuracyStats && (
-        <section className="py-24 bg-bg-elevated">
+        // TWEAK 5: Removed `bg-bg-elevated`
+        <section className="py-24">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-page-headline text-text-white mb-4">
@@ -420,7 +414,8 @@ const HomePage: React.FC = () => {
       )}
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-bg-pure-black to-red-primary/10">
+      {/* TWEAK 6: Removed gradient classes (`from-bg-pure-black to-red-primary/10`) */}
+      <section className="py-24">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-page-headline text-text-white mb-6">
             Get Premium Predictions

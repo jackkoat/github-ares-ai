@@ -1,9 +1,9 @@
+/* Import fonts first to avoid PostCSS warnings */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Import fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @layer base {
   * {
@@ -13,6 +13,13 @@
   body {
     @apply bg-bg-near-black text-text-primary font-primary;
     font-feature-settings: "rlig" 1, "calt" 1;
+
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.03) 2px, transparent 2px),
+      radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.03) 2px, transparent 2px);
+    background-size: 100px 100px;
+    background-position: 0 0, 50px 50px;
+    background-attachment: fixed;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -58,7 +65,7 @@
   }
   
   .card-elevated:hover {
-    @apply -translate-y-1;
+    @apply -translate-y-1 shadow-glow-red-subtle;
   }
   
   /* Win Probability Bar */
@@ -147,39 +154,4 @@
     transform: translateZ(0);
     will-change: transform;
   }
-}
-
-@layer base {
-  :root {
-    --radius: 0.5rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%
-  }
-
-  .dark {
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%
-  }
-}
-
-
-
-img {
-  object-position: top;
-}
-
-.fixed {
-  position: fixed;
 }

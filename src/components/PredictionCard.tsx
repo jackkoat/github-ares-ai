@@ -68,7 +68,7 @@ const PredictionCard: React.FC<PredictionCardProps> = ({
   const loserPercentage = 100 - winnerPercentage;
 
   return (
-    <div className={`card-elevated group cursor-pointer ${className}`}>
+    <div className={`card-elevated group cursor-pointer ${isMainEvent ? 'shadow-glow-red-subtle' : ''} ${className}`}>
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center space-x-3">
@@ -207,7 +207,7 @@ const PredictionCard: React.FC<PredictionCardProps> = ({
       {/* Action Button */}
       <Link 
         to={`/fight/${fightId}`}
-        className="btn-ghost w-full group-hover:border-red-primary group-hover:text-red-primary transition-colors duration-150"
+        className="btn-ghost w-full flex items-center group-hover:border-red-primary group-hover:text-red-primary transition-colors duration-150"
       >
         <span>View Full Analysis</span>
         <ChevronRight size={16} className="ml-2" />

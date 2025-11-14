@@ -140,7 +140,7 @@ const IndividualFightPage: React.FC = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-bg-pure-black">
+      <div className="min-h-screen">
         <Navigation />
         <div className="pt-16">
           <div className="max-w-7xl mx-auto px-6 py-24">
@@ -156,7 +156,7 @@ const IndividualFightPage: React.FC = () => {
 
   if (error || !fight) {
     return (
-      <div className="min-h-screen bg-bg-pure-black">
+      <div className="min-h-screen">
         <Navigation />
         <div className="pt-16">
           <div className="max-w-7xl mx-auto px-6 py-24 text-center">
@@ -175,7 +175,7 @@ const IndividualFightPage: React.FC = () => {
   const confidence = getConfidenceLevel(fight.prediction.confidence);
 
   return (
-    <div className="min-h-screen bg-bg-pure-black">
+    <div className="min-h-screen">
       <Navigation />
       
       <div className="pt-16">
@@ -191,7 +191,7 @@ const IndividualFightPage: React.FC = () => {
         </div>
 
         {/* Fight Header */}
-        <section className="py-12 bg-gradient-to-br from-bg-elevated to-bg-near-black border-b border-border-subtle">
+        <section className="py-12 border-b border-border-subtle">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="text-center mb-8">
               <h1 className="text-page-headline text-text-white mb-4">
