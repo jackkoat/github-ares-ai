@@ -103,7 +103,7 @@ const HomePage: React.FC = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative pt-16 pb-24 overflow-hidden">
+      <section className="relative min-h-screen flex items-center overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0">
           <img 
@@ -119,14 +119,13 @@ const HomePage: React.FC = () => {
           <div className="absolute inset-0 octagon-pattern opacity-30" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 w-full">
           <div className="text-center">
             <h1 className="text-hero text-text-white mb-6">
               UFC AI Fight Predictions
             </h1>
             <p className="text-body-large text-text-secondary max-w-3xl mx-auto mb-8">
-              Advanced machine learning algorithms analyze fighter data, historical performance, and matchup dynamics 
-              to deliver the most accurate fight predictions in MMA.
+              ARES AI delivers world-class UFC fight predictions using advanced machine learning, fighter analytics, and probability modeling.
             </p>
             
             {accuracyStats && (
@@ -155,11 +154,11 @@ const HomePage: React.FC = () => {
             )}
 
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <Link to="/fights" className="btn-primary">
+              <Link to="/fights" className="btn-primary flex items-center justify-center">
                 <Target size={20} className="mr-2" />
                 View Live Predictions
               </Link>
-              <Link to="/accuracy" className="btn-ghost">
+              <Link to="/accuracy" className="btn-ghost flex items-center justify-center">
                 <Award size={20} className="mr-2" />
                 Track AI Performance
               </Link>

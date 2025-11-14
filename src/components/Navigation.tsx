@@ -33,7 +33,7 @@ const Navigation: React.FC<NavigationProps> = ({ className = '' }) => {
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
               <img 
-                src="/images/ufc_belt.png" 
+                src="/images/logo.jpeg" 
                 alt="UFC AI" 
                 className="h-8 w-auto"
                 onError={(e) => {
@@ -41,8 +41,8 @@ const Navigation: React.FC<NavigationProps> = ({ className = '' }) => {
                   target.style.display = 'none';
                 }}
               />
-              <span className="text-xl font-display font-bold text-text-white">
-                UFC AI Predictions
+              <span className="hidden md:block text-xl font-display font-bold text-text-white">
+                Ares : UFC AI Fight Predictions
               </span>
             </Link>
 
