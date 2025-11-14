@@ -1,4 +1,0 @@
-# Need Supabase credentials for backend implementation
-SUPABASE_URL=<need-from-coordinator>
-SUPABASE_ANON_KEY=<need-from-coordinator>
-SUPABASE_SERVICE_ROLE_KEY=<need-from-coordinator>
